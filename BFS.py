@@ -45,15 +45,11 @@ def breadth_first_search(graph, start_node):
     q.append(start_node)
 
     while(q):
-#        for node in q:
         current = q.pop(0)
         for adj in graph[current]:
             if adj not in q and visited[adj] == False:
-#                if visited[adj] == False:
                 q.append(adj)
         visited[current] = True
         bfs.append(current)
     return bfs
 
-print ' '.join(breadth_first_search(graph, graph.keys()[0]))
-exit()
